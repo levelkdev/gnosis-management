@@ -16,7 +16,6 @@ setMomentRelativeTime()
 
 // load data from localstorage
 store.dispatch({ type: 'INIT' })
-store.dispatch(initProviders())
 
 Decimal.set({ toExpPos: 9999, precision: 50 })
 

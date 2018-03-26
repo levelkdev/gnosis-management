@@ -5,6 +5,7 @@ import autobind from 'autobind-decorator'
 import CurrencyName from 'components/CurrencyName'
 import DecimalValue from 'components/DecimalValue'
 import { providerPropType } from 'utils/shapes'
+import { metamaskUnlocked } from 'integrations/utils'
 import { upperFirst } from 'lodash'
 import className from 'classnames/bind'
 
@@ -18,8 +19,12 @@ const cx = className.bind(css)
 
 class Header extends Component {
   @autobind
-  handleConnectWalletClick() {
-    this.props.openConnectWalletModal()
+  async handleConnectWalletClick() {
+    if (!(await metamaskUnlocked())) {
+      this.props.openInstallMetamaskModal()
+    } else {
+      this.props.openAcceptTOSModal()
+    }
   }
 
   render() {
@@ -131,7 +136,7 @@ Header.propTypes = {
   currentBalance: PropTypes.string,
   currentProvider: providerPropType,
   currentAccount: PropTypes.string,
-  openConnectWalletModal: PropTypes.func.isRequired,
+  openInstallMetamaskModal: PropTypes.func.isRequired,
   isTournament: PropTypes.bool,
   logoPath: PropTypes.string.isRequired,
   smallLogoPath: PropTypes.string.isRequired,
@@ -140,6 +145,7 @@ Header.propTypes = {
   gameGuideType: PropTypes.string,
   gameGuideURL: PropTypes.string,
   tokenAddress: PropTypes.string.isRequired,
+  openAcceptTOSModal: PropTypes.func.isRequired,
 }
 
 Header.defaultProps = {

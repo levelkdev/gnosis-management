@@ -1,4 +1,5 @@
 import config from 'config.json'
+import Gnosis from '@gnosis.pm/gnosisjs'
 
 export const isTournament = () => config.interface.tournament
 
