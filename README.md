@@ -3,14 +3,16 @@ pm-trading-ui
 
 [![Join the chat at https://gitter.im/gnosis/pm-trading-ui](https://badges.gitter.im/gnosis/pm-trading-ui.svg)](https://gitter.im/gnosis/pm-trading-ui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Start with `npm start`, server available under `http://localhost:8000/`
+Start with `npm install`
+
+Then `npm start`, server available under `http://localhost:8000/`
 
 Quickstart with Docker/Docker Compose
 -----
 
 ### Install Docker and Docker Compose
 * First, install docker: https://docs.docker.com/engine/installation/.
-* Then, install docker compose: https://docs.docker.com/compose/install/
+* Then, install docker compose: https://docs.docker.com/compose/install/ (Docker for Mac and Docker Toolbox already include Compose along with other Docker apps, so Mac users do not need to install Compose separately.)
 * Clone the repository and change your working directory:
 
 ```
